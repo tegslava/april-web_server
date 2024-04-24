@@ -24,8 +24,10 @@ public class Dispatcher {
     public void execute(HttpRequest httpRequest, OutputStream outputStream) throws IOException {
         if (!router.containsKey(httpRequest.getUri())) {
             unknownOperationRequestProcessor.execute(httpRequest, outputStream);
+            outputStream.flush();
             return;
         }
         router.get(httpRequest.getUri()).execute(httpRequest, outputStream);
+        outputStream.flush();
     }
 }
