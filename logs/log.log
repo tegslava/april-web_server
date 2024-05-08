@@ -1,0 +1,57 @@
+INFO  2024-05-08 22:34:09 [main] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:30) - Сервер запущен на порту: 8189
+INFO  2024-05-08 22:34:09 [main] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:31) - debug=false
+INFO  2024-05-08 22:34:09 [main] ru.otus.tegneryadnov.web.server.application.processors.GetAllProductsProcessor (GetAllProductsProcessor.java:19) - debug=true
+INFO  2024-05-08 22:34:09 [main] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:33) - Диспетчер проинициализирован
+INFO  2024-05-08 22:34:09 [main] ru.otus.tegneryadnov.web.server.application.Storage (Storage.java:13) - Хранилище проинициализировано
+INFO  2024-05-08 22:34:20 [pool-2-thread-2] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /items
+HTTP-method: GET
+Parameters: {}
+Body: null
+
+DEBUG 2024-05-08 22:34:20 [pool-2-thread-2] ru.otus.tegneryadnov.web.server.application.processors.GetAllProductsProcessor (GetAllProductsProcessor.java:28) - HTTP/1.1 200 OK
+Content-Type: application/json
+
+[{"id":"22bfcbe1-b26c-42c1-ade4-8efbb05d862c","title":"item 0","price":232},{"id":"a8a2cf11-1153-46b2-9107-6d494222dc45","title":"item 1","price":603},{"id":"810af722-9540-40d6-aa33-d5c10e4f5ff4","title":"item 2","price":531}]
+INFO  2024-05-08 22:36:54 [pool-2-thread-4] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /items
+HTTP-method: PUT
+Parameters: {}
+Body:     {        "id": "810af722-9540-40d6-aa33-d5c10e4f5ff4",        "title": "item редактирую",        "price": 1000    }
+
+INFO  2024-05-08 22:38:38 [pool-2-thread-1] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /items
+HTTP-method: PUT
+Parameters: {}
+Body:     {        "id": "810af722-9540-40d6-aa33-000000000",        "title": "item создаю",        "price": 2000    }
+
+INFO  2024-05-08 22:39:23 [pool-2-thread-3] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /items
+HTTP-method: GET
+Parameters: {}
+Body: null
+
+DEBUG 2024-05-08 22:39:23 [pool-2-thread-3] ru.otus.tegneryadnov.web.server.application.processors.GetAllProductsProcessor (GetAllProductsProcessor.java:28) - HTTP/1.1 200 OK
+Content-Type: application/json
+
+[{"id":"22bfcbe1-b26c-42c1-ade4-8efbb05d862c","title":"item 0","price":232},{"id":"a8a2cf11-1153-46b2-9107-6d494222dc45","title":"item 1","price":603},{"id":"810af722-9540-40d6-aa33-d5c10e4f5ff4","title":"item редактирую","price":1000},{"id":"810af722-9540-40d6-aa33-000000000000","title":"item создаю","price":2000}]
+INFO  2024-05-08 22:40:59 [pool-2-thread-1] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /shutdown
+HTTP-method: GET
+Parameters: {}
+Body: null
+
+INFO  2024-05-08 22:40:59 [pool-2-thread-1] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:52) - Поступила команда SHUTDOWN. Сервер выключается...
+INFO  2024-05-08 22:40:59 [pool-2-thread-2] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /shutdown
+HTTP-method: GET
+Parameters: {}
+Body: null
+
+INFO  2024-05-08 22:40:59 [pool-2-thread-4] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:48) - 
+URI: /shutdown
+HTTP-method: GET
+Parameters: {}
+Body: null
+
+INFO  2024-05-08 22:40:59 [main] ru.otus.tegneryadnov.web.server.HttpServer (HttpServer.java:85) - Программа завершена
